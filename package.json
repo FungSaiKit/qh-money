@@ -2,11 +2,14 @@
   "name": "qh-money",
   "version": "1.0.0",
   "description": "A money lib for international business",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "test-c": "jest --coverage"
+    "test-c": "jest --coverage",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run test && npm run lint"
   },
   "keywords": [],
   "author": "",
