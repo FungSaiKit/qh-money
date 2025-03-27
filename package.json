@@ -1,7 +1,7 @@
 {
   "name": "qh-money",
   "version": "1.0.0",
-  "description": "",
+  "description": "A money lib for international business",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
