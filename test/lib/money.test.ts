@@ -242,7 +242,7 @@ test("Money - subtractRate", () => {
 
 test("Money - toFormattedString", () => {
   const money = new Money(1000, Currencies.CNY);
-  expect(money.toFormattedString()).toBe("¥1,000");
+  expect(money.toFormattedString()).toBe("¥1,000.00");
 });
 
 test("Money - toNumberString", () => {
@@ -252,5 +252,5 @@ test("Money - toNumberString", () => {
 
 test("Money - toString", () => {
   const money = new Money(1000, Currencies.CNY);
-  expect(money.toString()).toBe("¥1,000");
+  expect(money.toString()).toBe("¥1,000.00");
 });

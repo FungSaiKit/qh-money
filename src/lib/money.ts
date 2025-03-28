@@ -160,7 +160,10 @@ export class Money {
   public toFormattedString(): string {
     return this.currency.format.replace(
       "{amount}",
-      this.value.toLocaleString("en-US")
+      this.value.toLocaleString("en-US", {
+        minimumFractionDigits: this.currency.decimal,
+        maximumFractionDigits: this.currency.decimal,
+      })
     );
   }
 
