@@ -3,4 +3,5 @@ export interface Currency {
   name?: string;
   format: string;
   decimal?: number;
+  locale?: string;
 }

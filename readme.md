@@ -4,7 +4,7 @@ A money lib for international business. It can handle money computing and format
 
 ## Usage
 ```Typescript
-import { Currencies, Money } from "qh-money";
+import { Currencies, Currency, Money } from "qh-money";
 
 // Add 50 CNY to the money
 const money100 = new Money(100, Currencies.CNY);
@@ -42,5 +42,16 @@ console.log(money50.percentLessThan(money100)); // Output: 50
 
 // Percent of
 console.log(money50.percentOf(money100)); // Output: 50
+
+// Custom currency
+const currency: Currency = {
+  code: "CNY",
+  name: "Chinese Yuan",
+  format: "¥{amount}",
+  decimal: 2,
+  locale: "zh-CN",
+};
+money = new Money(1000, currency);
+console.log(money.toFormattedString()); // Output: ¥1000.00
 
 ```

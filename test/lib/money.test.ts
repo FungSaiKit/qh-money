@@ -1,4 +1,4 @@
-import { Currencies, Money } from "../../src";
+import { Currencies, Currency, Money } from "../../src";
 
 test("Money - Available", () => {
   const money = new Money(100, Currencies.CNY);
@@ -252,5 +252,17 @@ test("Money - toNumberString", () => {
 
 test("Money - toString", () => {
   const money = new Money(1000, Currencies.CNY);
-  expect(money.toString()).toBe("¥1,000.00");
+  expect(money.toString()).toBe("Chinese Yuan: ¥1,000.00");
+});
+
+test("Money - custom currency", () => {
+  const currency: Currency = {
+    code: "CNY",
+    name: "Chinese Yuan",
+    format: "¥{amount}",
+    decimal: 2,
+    locale: "zh-CN",
+  };
+  const money = new Money(1000, currency);
+  expect(money.toFormattedString()).toBe("¥1,000.00");
 });
