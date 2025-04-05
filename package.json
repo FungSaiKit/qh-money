@@ -1,6 +1,6 @@
 {
   "name": "qh-money",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "A money lib for international business. It can handle money computing and formatting.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

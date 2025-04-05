@@ -83,7 +83,7 @@ export class Money {
   }
 
   public getValue(): number {
-    return this.value;
+    return Number(this.value.toFixed(this.currency.decimal || 2));
   }
 
   public getValueOrNull(): null | number {
@@ -161,7 +161,6 @@ export class Money {
     return this.currency.format.replace(
       "{amount}",
       this.value.toLocaleString(this.currency.locale, {
-        minimumFractionDigits: this.currency.decimal,
         maximumFractionDigits: this.currency.decimal,
       })
     );

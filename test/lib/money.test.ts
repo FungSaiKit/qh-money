@@ -242,7 +242,7 @@ test("Money - subtractRate", () => {
 
 test("Money - toFormattedString", () => {
   const money = new Money(1000, Currencies.CNY);
-  expect(money.toFormattedString()).toBe("¥1,000.00");
+  expect(money.toFormattedString()).toBe("¥1,000");
 });
 
 test("Money - toNumberString", () => {
@@ -252,7 +252,12 @@ test("Money - toNumberString", () => {
 
 test("Money - toString", () => {
   const money = new Money(1000, Currencies.CNY);
-  expect(money.toString()).toBe("Chinese Yuan: ¥1,000.00");
+  expect(money.toString()).toBe("Chinese Yuan: ¥1,000");
+});
+
+test("Money - toString", () => {
+  const money = new Money(9999.99, Currencies.CNY);
+  expect(money.toString()).toBe("Chinese Yuan: ¥9,999.99");
 });
 
 test("Money - custom currency", () => {
@@ -264,5 +269,5 @@ test("Money - custom currency", () => {
     locale: "zh-CN",
   };
   const money = new Money(1000, currency);
-  expect(money.toFormattedString()).toBe("¥1,000.00");
+  expect(money.toFormattedString()).toBe("¥1,000");
 });
