@@ -1,6 +1,6 @@
 {
   "name": "qh-money",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A money lib for international business. It can handle money computing and formatting.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,7 +24,8 @@
   "author": "jackfung",
   "license": "ISC",
   "dependencies": {
-    "decimal.js": "^10.5.0"
+    "decimal.js": "^10.5.0",
+    "qh-money": "file:"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",

@@ -12,7 +12,11 @@ export class Money {
     public readonly value: number,
     public readonly currency: Currency
   ) {
-    this.value = value;
+    if (typeof value === "string") {
+      this.value = Number(value);
+    } else {
+      this.value = value;
+    }
     this.currency = currency;
     this.available = typeof value === "number" && !!currency && !!currency.code;
     this.valueOrNull = this.available ? value : null;
